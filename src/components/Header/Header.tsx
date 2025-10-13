@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon, Menu, X } from "lucide-react";
-import logo from "../assets/logo.svg";
+import { Link } from "react-router";
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false);
@@ -59,27 +59,21 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center md:gap-6">
-            <a
-              href="#"
-              className="text-sm font-medium text-[var(--color-text)] 
-                         px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200"
-            >
-              Home
-            </a>
-            <a
-              href="#explore"
-              className="text-sm font-medium text-[var(--color-text)] 
-                         px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200"
-            >
-              Explore
-            </a>
-            <a
-              href="#contact"
-              className="text-sm font-medium text-[var(--color-text)] 
-                         px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200"
-            >
-              Contact
-            </a>
+            
+            <Link to = "/" 
+                className="text-sm font-medium text-[var(--color-text)] px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200">
+                  Home
+            </Link>
+
+            <Link to = "/explore" 
+                className="text-sm font-medium text-[var(--color-text)] px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200">
+                  Explore
+            </Link>
+
+            <Link to = "/contact" 
+                className="text-sm font-medium text-[var(--color-text)] px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200">
+                  Contact
+            </Link>
           </nav>
 
           {/* Actions */}
