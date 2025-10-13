@@ -1,144 +1,161 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Sun, Moon, Menu, X } from "lucide-react";
+import logo from "../assets/logo.svg";
 
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+export default function Header() {
+  const [isDark, setIsDark] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Toggle dark mode class on the root element
+  // Load theme preference
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-  }, [darkMode]);
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      setIsDark(true);
+    }
+  }, []);
+
+  // Toggle theme
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    if (root.classList.contains("dark")) {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDark(false);
+    } else {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDark(true);
+    }
+  };
+
+  // Close mobile menu when resizing above md
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setMenuOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <nav
-      className="shadow-lg"
-      style={{
-        backgroundColor: "var(--color-card)",
-        color: "var(--color-text)",
-      }}
+    <header
+      className="sticky top-6 z-50 mx-auto w-full max-w-screen-md lg:max-w-screen-lg
+                 border border-[var(--color-border)] py-3 md:rounded-3xl 
+                 shadow-lg backdrop-blur-2xl bg-[var(--color-card)]/70 
+                 transition-all duration-300"
     >
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+      <div className="px-4">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <span
-              className="text-2xl font-bold cursor-pointer"
-              style={{ color: "var(--color-primary)" }}
+          <a href="/" className="flex items-center shrink-0">
+            <img
+              className="h-7 w-auto dark:invert"
+              src=" "
+              alt="Website Logo"
+            />
+            <p className="sr-only">Website Title</p>
+          </a>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex md:items-center md:gap-6">
+            <a
+              href="#"
+              className="text-sm font-medium text-[var(--color-text)] 
+                         px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200"
             >
-              TravelBook
-            </span>
-          </div>
+              Home
+            </a>
+            <a
+              href="#explore"
+              className="text-sm font-medium text-[var(--color-text)] 
+                         px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200"
+            >
+              Explore
+            </a>
+            <a
+              href="#contact"
+              className="text-sm font-medium text-[var(--color-text)] 
+                         px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200"
+            >
+              Contact
+            </a>
+          </nav>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {["Home", "Explore", "Contact"].map((item) => (
-              <button
-                key={item}
-                className="transition duration-300"
-                style={{ color: "var(--color-text)" }}
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.color = "var(--color-primary)")
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.color = "var(--color-text)")
-                }
-              >
-                {item}
-              </button>
-            ))}
-
-            {/* Dark/Light Mode Toggle */}
+          {/* Actions */}
+          <div className="flex items-center gap-3">
+            {/* Theme Toggle */}
             <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="px-3 py-2 rounded-lg transition duration-300 text-white"
-              style={{
-                backgroundColor: "var(--color-primary)",
-              }}
-              onMouseOver={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "var(--color-primary-hover)")
-              }
-              onMouseOut={(e) =>
-                (e.currentTarget.style.backgroundColor = "var(--color-primary)")
-              }
+              onClick={toggleTheme}
+              className="flex items-center justify-center rounded-xl 
+                         bg-[var(--color-card)] p-2 text-[var(--color-text)] 
+                         ring-1 ring-inset ring-[var(--color-border)] shadow-sm 
+                         hover:bg-[var(--color-bg)] transition-all duration-150"
+              aria-label="Toggle dark mode"
             >
-              {darkMode ? "☀️ Light" : "🌙 Dark"}
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="focus:outline-none"
-              style={{ color: "var(--color-text)" }}
-              onMouseOver={(e) =>
-                (e.currentTarget.style.color = "var(--color-primary)")
-              }
-              onMouseOut={(e) =>
-                (e.currentTarget.style.color = "var(--color-text)")
-              }
+            {/* Login Button */}
+            <a
+              href="/login"
+              className="hidden md:inline-flex items-center justify-center rounded-xl 
+                         bg-[var(--color-primary)] px-3 py-2 text-sm font-semibold text-white 
+                         shadow-sm hover:bg-[var(--color-primary-hover)] 
+                         focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] 
+                         transition-all duration-150"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={
-                    isMenuOpen
-                      ? "M6 18L18 6M6 6l12 12" // X icon
-                      : "M4 6h16M4 12h16M4 18h16" // Hamburger icon
-                  }
-                />
-              </svg>
+              Login
+            </a>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden flex items-center justify-center p-2 rounded-lg text-[var(--color-text)] 
+                         hover:bg-[var(--color-bg)] transition-all duration-200"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4">
-            {["Home", "Explore", "Contact"].map((item) => (
-              <button
-                key={item}
-                className="block w-full text-left px-4 transition duration-300"
-                style={{ color: "var(--color-text)" }}
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.color = "var(--color-primary)")
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.color = "var(--color-text)")
-                }
-              >
-                {item}
-              </button>
-            ))}
-
-            {/* Dark Mode Toggle */}
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="block w-full text-left px-4 py-2 rounded-lg text-white transition duration-300"
-              style={{
-                backgroundColor: "var(--color-primary)",
-              }}
-              onMouseOver={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "var(--color-primary-hover)")
-              }
-              onMouseOut={(e) =>
-                (e.currentTarget.style.backgroundColor = "var(--color-primary)")
-              }
+        {/* Mobile Dropdown Menu */}
+        {menuOpen && (
+          <div className="mt-3 flex flex-col gap-2 rounded-2xl border border-[var(--color-border)] 
+                          bg-[var(--color-card)] shadow-md p-3 md:hidden">
+            <a
+              href="#"
+              className="block px-3 py-2 rounded-lg text-sm font-medium text-[var(--color-text)] 
+                         hover:bg-[var(--color-primary)] hover:text-white transition-all"
             >
-              {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-            </button>
+              Home
+            </a>
+            <a
+              href="#explore"
+              className="block px-3 py-2 rounded-lg text-sm font-medium text-[var(--color-text)] 
+                         hover:bg-[var(--color-primary)] hover:text-white transition-all"
+            >
+              Explore
+            </a>
+            <a
+              href="#contact"
+              className="block px-3 py-2 rounded-lg text-sm font-medium text-[var(--color-text)] 
+                         hover:bg-[var(--color-primary)] hover:text-white transition-all"
+            >
+              Contact
+            </a>
+            <a
+              href="/login"
+              className="mt-1 inline-flex items-center justify-center rounded-xl 
+                         bg-[var(--color-primary)] px-3 py-2 text-sm font-semibold text-white 
+                         shadow-sm hover:bg-[var(--color-primary-hover)] transition-all duration-150"
+            >
+              Login
+            </a>
           </div>
         )}
       </div>
-    </nav>
+    </header>
   );
 }
