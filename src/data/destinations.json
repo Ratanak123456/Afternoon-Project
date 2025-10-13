@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Bali",
+    "country": "Indonesia",
+    "description": "Tropical paradise with beautiful beaches and rich culture",
+    "image": "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1",
+    "rating": 4.8,
+    "priceRange": "$$"
+  },
+  {
+    "id": 2,
+    "name": "Paris",
+    "country": "France",
+    "description": "The city of love with iconic landmarks and museums",
+    "image": "https://images.unsplash.com/photo-1502602898536-47ad22581b52",
+    "rating": 4.7,
+    "priceRange": "$$$"
+  },
+  {
+    "id": 3,
+    "name": "Tokyo",
+    "country": "Japan",
+    "description": "Vibrant metropolis blending tradition and modernity",
+    "image": "https://images.unsplash.com/photo-1540959733332-8ab4aab0b3ad",
+    "rating": 4.9,
+    "priceRange": "$$$"
+  },
+  {
+    "id": 4,
+    "name": "Santorini",
+    "country": "Greece",
+    "description": "Stunning island with white buildings and blue domes",
+    "image": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff",
+    "rating": 4.8,
+    "priceRange": "$$$"
+  }
+]
