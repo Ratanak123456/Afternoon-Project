@@ -38,6 +38,22 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Navigation items
+  const navItems = [
+    {
+      path: "/",
+      name: "Home",
+    },
+    {
+      path: "/explore",
+      name: "Explore",
+    },
+    {
+      path: "/contact",
+      name: "Contact",
+    },
+  ];
+
   return (
     <header
       className="sticky top-6 z-50 mx-auto w-full max-w-screen-md lg:max-w-screen-lg
@@ -59,21 +75,14 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center md:gap-6">
-            
-            <Link to = "/" 
-                className="text-sm font-medium text-[var(--color-text)] px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200">
-                  Home
-            </Link>
-
-            <Link to = "/explore" 
-                className="text-sm font-medium text-[var(--color-text)] px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200">
-                  Explore
-            </Link>
-
-            <Link to = "/contact" 
-                className="text-sm font-medium text-[var(--color-text)] px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200">
-                  Contact
-            </Link>
+            {navItems.map((items) => (
+              <Link
+                to={items.path}
+                className="text-sm font-medium text-[var(--color-text)] px-3 py-1.5 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200"
+              >
+                {items.name}
+              </Link>
+            ))}
           </nav>
 
           {/* Actions */}
@@ -116,8 +125,10 @@ export default function Header() {
 
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
-          <div className="mt-3 flex flex-col gap-2 rounded-2xl border border-[var(--color-border)] 
-                          bg-[var(--color-card)] shadow-md p-3 md:hidden">
+          <div
+            className="mt-3 flex flex-col gap-2 rounded-2xl border border-[var(--color-border)] 
+                          bg-[var(--color-card)] shadow-md p-3 md:hidden"
+          >
             <a
               href="#"
               className="block px-3 py-2 rounded-lg text-sm font-medium text-[var(--color-text)] 
