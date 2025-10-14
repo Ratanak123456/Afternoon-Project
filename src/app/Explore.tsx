@@ -1,4 +1,5 @@
 import DestinationCard from "../components/DestinationCard/DestinationCard";
+import destinations from "../data/destinations.json";
 import SearchBar from "../components/SearchBar/SearchBar";
 
 export default function Explore() {
@@ -6,17 +7,24 @@ export default function Explore() {
     <div className="min-h-screen bg-[var(--color-bg)] py-8">
       <div className="max-w-7xl mx-auto px-4">
         {/* ===== Header ===== */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-[var(--color-text)] mb-4">
+        <div className="text-center mb-12 px-4 transition-colors duration-300">
+          <h1
+            className="
+      mt-5 text-3xl sm:text-4xl md:text-5xl font-extrabold text-[var(--color-text)] dark:text-[var(--color-primary)] mb-3 tracking-tight"
+          >
             Explore
           </h1>
-          <p className="text-xl text-[var(--color-subtext)]">
-            Discover amazing destinations and accommodations
+          <p
+            className="
+      text-base sm:text-lg md:text-xl text-[var(--color-text)] dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
+          >
+            Discover amazing destinations and accommodations that match your
+            vibe 🌴✨
           </p>
         </div>
 
         {/* ===== Search Bar ===== */}
-        <SearchBar/>
+        <SearchBar />
 
         {/* ===== Filters ===== */}
         <div className="bg-[var(--color-card)] rounded-lg shadow-md p-6 mb-8">
@@ -71,20 +79,23 @@ export default function Explore() {
             <h2 className="text-3xl font-bold text-[var(--color-text)] mb-6">
               Destinations
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-[var(--color-card)] rounded-xl shadow-md h-64">
-                <DestinationCard
-                  id={1}
-                  name="Phnom Penh"
-                  country="Cambodia"
-                  description="Discover the charm of Cambodia’s capital, filled with history, culture, and modern vibes."
-                  image="https://source.unsplash.com/600x400/?phnom-penh"
-                  rating={4.8}
-                  priceRange="$120 - $200"
-              />
-              </div>
-              <div className="bg-[var(--color-card)] rounded-xl shadow-md h-64"></div>
-              <div className="bg-[var(--color-card)] rounded-xl shadow-md h-64"></div>
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {destinations.map((destination) => (
+                <div
+                  key={destination.id}
+                  className="mt-10 bg-[var(--color-card)] rounded-xl shadow-md h-64"
+                >
+                  <DestinationCard
+                    id={destination.id}
+                    name={destination.name}
+                    country={destination.country}
+                    description={destination.description}
+                    image={destination.image}
+                    rating={destination.rating}
+                    priceRange={destination.priceRange}
+                  />
+                </div>
+              ))}
             </div>
           </section>
 

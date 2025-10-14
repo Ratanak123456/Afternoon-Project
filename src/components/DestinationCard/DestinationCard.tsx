@@ -1,6 +1,6 @@
 import type { Destination } from "../../types/destination";
 
-export default function PlaceCard({ image, name, country, description, rating, priceRange }: Destination) {
+export default function DestinationCard({ image, name, country, description, rating, priceRange }: Destination) {
   return (
     <div className="relative">
       {/* 💫 Card */}
