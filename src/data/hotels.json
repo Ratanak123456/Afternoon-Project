@@ -1,38 +1,38 @@
 [
   {
     "id": 1,
-    "name": "Bali Beach Resort",
-    "location": "Bali, Indonesia",
-    "pricePerNight": 120,
-    "rating": 4.5,
-    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-    "destinationId": 1,
-    "description": "Luxury beachfront resort with private pools and spa",
-    "amenities": ["Pool", "Spa", "Beach Access", "Restaurant", "Free WiFi"]
+    "name": "Hotel Emion Phnom Penh",
+    "location": "Phnom Penh, Cambodia",
+    "pricePerNight": 62,
+    "rating": 4.6,
+    "image": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/lodging/25000000/24090000/24085000/24084901/0506bc3a_z.jpg?_src=imagekit&tr=c-at_max,f-jpg,h-360,pr-true,q-80,w-640",
+    "destinationId": [2,3],
+    "description": "Only a short walk from Mekong River.",
+    "amenities": ["Restaurant", "Private bathroom", "Air conditioning", "Parking", "Free WiFi" , "Bathtub", "Kitchenette"]
     
   },
   {
     "id": 2,
-    "name": "Paris Luxury Hotel",
-    "location": "Paris, France",
-    "pricePerNight": 200,
-    "rating": 4.8,
-    "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa",
-    "destinationId": 2,
-    "description": "Elegant hotel in the heart of Paris with Eiffel Tower views",
-    "amenities": ["City View", "Spa", "Fine Dining", "Concierge", "Free WiFi"]
+    "name": "Golden Temple Residence",
+    "location": "Siem Reap, Cambodia",
+    "pricePerNight": 71,
+    "rating": 5.0,
+    "image": "https://res.klook.com/klook-hotel/image/upload/trip/200s190000017mdj242D4_R_550_412_R5.webp",
+    "destinationId": 1,
+    "description": "3-minute walk from Pub Street",
+    "amenities": ["Restaurant", "Spa", "Luggage storage", "Business center", "Free WiFi"]
 
   },
   {
     "id": 3,
-    "name": "Tokyo City Hotel",
-    "location": "Tokyo, Japan",
-    "pricePerNight": 150,
-    "rating": 4.6,
-    "image": "https://images.unsplash.com/photo-1584132915808-f8ae85ed06fb",
+    "name": "Queenco Hotel & Casino",
+    "location": "Krong Preah Sihanouk, Cambodia",
+    "pricePerNight": 116,
+    "rating": 4.2,
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/69/1c/00/caption.jpg?w=1000&h=-1&s=1",
     "destinationId": 3,
-    "description": "Modern hotel in central Tokyo with excellent service",
-    "amenities": ["City View", "Restaurant", "Fitness Center", "Free WiFi", "Spa"]
+    "description": "Offers you a luxurious seaside escape.",
+    "amenities": ["Fitness / spa locker rooms", "Free breakfast", "Casino and Gambling", "Free WiFi", "Spa"]
     
   }
 ]

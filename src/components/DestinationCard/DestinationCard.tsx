@@ -18,7 +18,7 @@ export default function DestinationCard({ image, name, country, description, rat
         </div>
 
         <div className="p-4">
-          <p className="text-[var(--color-subtext)] text-sm mb-3 line-clamp-2">
+          <p className="text-[var(--color-text)] text-sm mb-3 line-clamp-2">
             {description}
           </p>
 
