@@ -12,7 +12,7 @@ export default function HotelCard({
   destinationId,
 }: Hotel) {
   return (
-    <Link to={`/hotel/${id}`} className="relative block">
+    <Link to={`/detail/hotel/${id}`} className="relative block">
       <div
         className=" bg-[var(--color-card)] border border-[var(--color-border)]
              rounded-2xl shadow-md overflow-hidden transition-all duration-300

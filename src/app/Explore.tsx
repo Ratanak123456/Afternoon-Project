@@ -11,7 +11,7 @@ export default function Explore() {
   const [selectedCity, setSelectedCity] = useState("All Location");
   const [maxPrice, setMaxPrice] = useState(500);
 
-  const filteredDestinations = destinations
+  const filteredDestinations = destinations                              
     .filter(
       (destination) =>
         (destination.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -140,13 +140,7 @@ export default function Explore() {
                     className="mt-10 bg-[var(--color-card)] rounded-xl shadow-md h-64"
                   >
                     <DestinationCard
-                      id={destination.id}
-                      name={destination.name}
-                      country={destination.country}
-                      description={destination.description}
-                      image={destination.image}
-                      rating={destination.rating}
-                      priceRange={destination.priceRange}
+                      {...destination}
                     />
                   </div>
                 ))}
@@ -167,14 +161,7 @@ export default function Explore() {
                     className="bg-[var(--color-card)] rounded-xl shadow-md h-64"
                   >
                     <HotelCard
-                      id={hotel.id}
-                      name={hotel.name}
-                      image={hotel.image}
-                      pricePerNight={hotel.pricePerNight}
-                      rating={hotel.rating}
-                      description={hotel.description}
-                      location={hotel.location}
-                      destinationId={hotel.destinationId}
+                      {...hotel}
                     />
                   </div>
                 ))}
