@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Destination } from "../../types/destination";
+import StarRating from "../StarRating/StarRating";
 
 export default function DestinationCard({ id, image, name, country, description, rating, priceRange }: Destination) {
   return (
@@ -24,12 +25,7 @@ export default function DestinationCard({ id, image, name, country, description,
           </p>
 
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-1">
-              <span className="text-yellow-400">★</span>
-              <span className="text-sm text-[var(--color-text)]">
-                {rating}
-              </span>
-            </div>
+            <StarRating rating={rating} />
             <span className="text-sm font-semibold text-[var(--color-primary)]">
               {priceRange}
             </span>

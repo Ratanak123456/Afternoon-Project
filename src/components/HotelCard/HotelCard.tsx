@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Hotel } from "../../types/hotel";
+import StarRating from "../StarRating/StarRating";
 
 export default function HotelCard({
   id,
@@ -56,11 +57,8 @@ export default function HotelCard({
 
           {/* Footer Section */}
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-1">
-              <span className="text-[var(--color-primary)]">★</span>
-              <span className="text-sm text-[var(--color-text)] ml-1">
-                {rating}
-              </span>
+            <div className="flex items-center">
+              <StarRating rating={rating} />
               <Link
                 to={`/destination/${destinationId}`}
                 onClick={(e) => e.stopPropagation()}

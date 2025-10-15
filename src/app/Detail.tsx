@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import destinations from "../data/destinations.json";
 import hotels from "../data/hotels.json";
@@ -11,32 +12,36 @@ import DetailRelatedHotels from "../components/DetailComponents/DetailRelatedHot
 import DetailBookButton from "../components/DetailComponents/DetailBookButton";
 
 export default function Detail() {
-  const { type, id } = useParams();
+  const { type, id } = useParams<{ type: string; id: string }>();
+  const [item, setItem] = useState<any>(null);
+  const [relatedHotels, setRelatedHotels] = useState<any[]>([]);
 
-  let item: any = null;
-  let relatedHotels: any[] = [];
-
-  if (type === "destination") {
-    item = destinations.find((d) => d.id === Number(id));
-    if (item) {
-      relatedHotels = hotels.filter((h) => {
-        if (Array.isArray(h.destinationId)) {
-          return h.destinationId.includes(item.id);
-        } else {
-          return h.destinationId === item.id;
-        }
-      });
+  useEffect(() => {
+    let foundItem: any = null;
+    if (type === "destination") {
+      foundItem = destinations.find((d) => d.id === Number(id));
+      if (foundItem) {
+        const related = hotels.filter((h) => {
+          if (Array.isArray(h.destinationId)) {
+            return h.destinationId.includes(foundItem.id);
+          } else {
+            return h.destinationId === foundItem.id;
+          }
+        });
+        setRelatedHotels(related);
+      }
+    } else if (type === "hotel") {
+      foundItem = hotels.find((h) => h.id === Number(id));
     }
-  } else if (type === "hotel") {
-    item = hotels.find((h) => h.id === Number(id));
-  }
+    setItem(foundItem);
+  }, [type, id]);
 
   if (!item) {
     return <NotFound />;
   }
 
   return (
-    <div className="min-h-screen transition-colors duration-300 py-8">
+    <div className="min-h-screen transition-colors duration-300 py-8 ">
       <div className="max-w-7xl mx-auto px-4">
         <DetailHeader
           image={item.image}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon, Menu, X } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false);
@@ -58,7 +58,7 @@ export default function Header() {
     <header
       className="sticky top-6 z-50 mx-auto w-full max-w-screen-md lg:max-w-screen-lg
                  border border-[var(--color-border)] py-3 md:rounded-3xl 
-                 shadow-lg backdrop-blur-2xl bg-[var(--color-card)]/70 
+                 shadow-lg backdrop-blur-2xl bg-[var(--color-card)]/40 
                  transition-all duration-300"
     >
       <div className="px-4">
