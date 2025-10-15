@@ -1,4 +1,4 @@
-interface DetailAboutProps {
+type DetailAboutProps = {
   description: string;
 }
 

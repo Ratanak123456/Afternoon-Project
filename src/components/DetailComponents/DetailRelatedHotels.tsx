@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import HotelCard from "../HotelCard/HotelCard";
 
-interface DetailRelatedHotelsProps {
+type DetailRelatedHotelsProps = {
   hotels: any[];
   name: string;
 }

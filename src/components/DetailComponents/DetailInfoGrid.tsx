@@ -1,4 +1,4 @@
-interface DetailInfoGridProps {
+type DetailInfoGridProps ={
   type: string;
   pricePerNight?: number;
   priceRange?: string;
