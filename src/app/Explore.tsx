@@ -6,40 +6,53 @@ import HotelCard from "../components/HotelCard/HotelCard";
 import hotels from "../data/hotels.json";
 
 export default function Explore() {
+  // State for search input
   const [searchQuery, setSearchQuery] = useState("");
+  // State for filter type (All, Destinations, Hotels)
   const [filterType, setFilterType] = useState("All");
+  // State for selected city/country
   const [selectedCity, setSelectedCity] = useState("All Location");
+  // State for maximum price filter
   const [maxPrice, setMaxPrice] = useState(500);
 
-  const filteredDestinations = destinations                              
-    .filter(
-      (destination) =>
-        (destination.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          destination.country.toLowerCase().includes(searchQuery.toLowerCase())) &&
-        (selectedCity === "All Location" || destination.country === selectedCity)
-    );
+  // Filter destinations based on search query and selected city
+  const filteredDestinations = destinations.filter(
+    (destination) =>
+      (destination.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        destination.country
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())) &&
+      (selectedCity === "All Location" || destination.country === selectedCity)
+  );
 
-  const filteredHotels = hotels
-    .filter(
-      (hotel) =>
-        (hotel.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          hotel.location.toLowerCase().includes(searchQuery.toLowerCase())) &&
-        (selectedCity === "All Location" || hotel.location.includes(selectedCity)) &&
-        hotel.pricePerNight <= maxPrice
-    );
+  // Filter hotels based on search query, selected city, and max price
+  const filteredHotels = hotels.filter(
+    (hotel) =>
+      (hotel.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        hotel.location.toLowerCase().includes(searchQuery.toLowerCase())) &&
+      (selectedCity === "All Location" ||
+        hotel.location.includes(selectedCity)) &&
+      hotel.pricePerNight <= maxPrice
+  );
 
+  // Handle change for city/country filter dropdown
   const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCity(event.target.value);
   };
 
+  // Handle change for price range slider
   const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMaxPrice(Number(event.target.value));
   };
 
-  const handleFilterTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  // Handle change for filter type dropdown
+  const handleFilterTypeChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setFilterType(event.target.value);
   };
 
+  // Get unique list of cities/countries for dropdown options
   const cities = [
     "All Location",
     ...new Set(destinations.map((d) => d.country)),
@@ -66,10 +79,7 @@ export default function Explore() {
         </div>
 
         {/* ===== Search Bar ===== */}
-        <SearchBar
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-        />
+        <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
         {/* ===== Filters ===== */}
         <div className="bg-[var(--color-card)] rounded-lg shadow-md p-6 mb-8">
@@ -139,9 +149,7 @@ export default function Explore() {
                     key={destination.id}
                     className="mt-10 bg-[var(--color-card)] rounded-xl shadow-md h-64"
                   >
-                    <DestinationCard
-                      {...destination}
-                    />
+                    <DestinationCard {...destination} />
                   </div>
                 ))}
               </div>
@@ -160,9 +168,7 @@ export default function Explore() {
                     key={hotel.id}
                     className="bg-[var(--color-card)] rounded-xl shadow-md h-64"
                   >
-                    <HotelCard
-                      {...hotel}
-                    />
+                    <HotelCard {...hotel} />
                   </div>
                 ))}
               </div>

@@ -36,7 +36,7 @@ export default function Detail() {
   }
 
   return (
-    <div className="min-h-screen bg-[var(--color-bg)] transition-colors duration-300 py-8">
+    <div className="min-h-screen transition-colors duration-300 py-8">
       <div className="max-w-7xl mx-auto px-4">
         <DetailHeader
           image={item.image}
@@ -46,7 +46,7 @@ export default function Detail() {
           location={item.location}
         />
 
-        <div className="bg-[var(--color-card)] dark:bg-gray-900 rounded-2xl shadow-md mb-8 border border-[var(--color-border)] transition-all duration-300">
+        <div className=" rounded-2xl shadow-md mb-8 border border-[var(--color-border)] transition-all duration-300">
           <DetailTabs />
 
           <div className="p-6 space-y-8">

@@ -1,4 +1,4 @@
-interface DetailHeaderProps {
+type DetailHeaderProps = {
   image: string;
   name: string;
   type: string;
@@ -8,7 +8,7 @@ interface DetailHeaderProps {
 
 export default function DetailHeader({ image, name, type, country, location }: DetailHeaderProps) {
   return (
-    <div className="bg-[var(--color-card)] dark:bg-gray-900 rounded-2xl shadow-md overflow-hidden mb-8 border border-[var(--color-border)] transition-all duration-300">
+    <div className="bg-[var(--color-card)] dark:bg-gray-900 rounded-2xl shadow-md overflow-hidden mb-8 border border-[var(--color-border)] transition-all duration-300 ">
       <div className="relative h-80 md:h-96">
         <img
           src={image}
