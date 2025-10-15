@@ -1,38 +1,38 @@
 [
   {
     "id": 1,
-    "name": "Bali",
-    "country": "Indonesia",
-    "description": "Tropical paradise with beautiful beaches and rich culture",
-    "image": "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1",
-    "rating": 4.8,
+    "name": "Angkor Wat",
+    "country": "Siem Reap",
+    "description": "Ancient temple complex and UNESCO World Heritage site",
+    "image": "https://i.pinimg.com/1200x/f7/e3/6e/f7e36e52926a193058e823a070047fdd.jpg",
+    "rating": 5,
     "priceRange": "$$"
   },
   {
     "id": 2,
-    "name": "Paris",
-    "country": "France",
-    "description": "The city of love with iconic landmarks and museums",
-    "image": "https://images.unsplash.com/photo-1502602898536-47ad22581b52",
-    "rating": 4.7,
+    "name": "National Museum of Cambodia",
+    "country": "Phnom Penh",
+    "description": "Cultural museum showcasing Khmer art and history",
+    "image": "https://i.pinimg.com/1200x/7a/56/2e/7a562ecc26f31c61d10b2b5139a0b9df.jpg",
+    "rating": 4,
     "priceRange": "$$$"
   },
   {
     "id": 3,
-    "name": "Tokyo",
-    "country": "Japan",
-    "description": "Vibrant metropolis blending tradition and modernity",
-    "image": "https://images.unsplash.com/photo-1540959733332-8ab4aab0b3ad",
-    "rating": 4.9,
+    "name": "Phnom Penh Royal Palace",
+    "country": "Phnom Penh",
+    "description": "Majestic royal residence with beautiful architecture",
+    "image": "https://i.pinimg.com/1200x/cb/0b/d2/cb0bd2c98b64ac684ef8415b7081f177.jpg",
+    "rating": 5,
     "priceRange": "$$$"
   },
   {
     "id": 4,
-    "name": "Santorini",
-    "country": "Greece",
-    "description": "Stunning island with white buildings and blue domes",
-    "image": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff",
-    "rating": 4.8,
+    "name": "Koh Rong Samloem",
+    "country": "Krong Preah Sihanouk",
+    "description": "Tropical island paradise with pristine beaches",
+    "image": "https://i.pinimg.com/1200x/f3/fe/02/f3fe02a5e8c9d96b468cc0b0178b5107.jpg",
+    "rating": 4,
     "priceRange": "$$$"
   }
 ]
