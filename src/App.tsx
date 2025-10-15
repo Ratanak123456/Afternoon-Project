@@ -24,6 +24,7 @@ const router = createBrowserRouter([
         path: "/explore",
         element: <Explore />,
       }
+      
     ]
   },
 ]);
@@ -33,7 +34,12 @@ function App() {
   return (
     <>
     <RouterProvider router={router} />
+    
+  
+    
+    
     </>
+    
   )
 }
 
