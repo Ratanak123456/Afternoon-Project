@@ -6,6 +6,8 @@ import Contact from './app/Contact';
 import Explore from './app/Explore';
 import NotFound from './app/NotFound';
 import Detail from './app/Detail';
+import Auth from './components/auth/Auth';
+import LoginForm from './components/auth/login/LoginForm';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/detail/:type/:id",
         element: <Detail />,
+      },
+      {
+        path: "/auth",
+        element: <LoginForm/>,
       }
     ]
   },
@@ -39,6 +45,7 @@ function App() {
     <>
     <RouterProvider router={router} />
     </>
+    
   )
 }
 

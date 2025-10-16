@@ -100,16 +100,15 @@ export default function Header() {
             </button>
 
             {/* Login Button */}
-            <a
-              href="/auth"
+            <Link to="/Auth"
+
               className="hidden md:inline-flex items-center justify-center rounded-xl 
                          bg-[var(--color-primary)] px-3 py-2 text-sm font-semibold text-white 
-                         shadow-sm hover:bg-[var(--color-primary-hover)] 
-                         focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)] 
-                         transition-all duration-150"
+                         shadow-sm hover:bg-[var(--color-primary-hover)] transition-all duration-150"
             >
               Login
-            </a>
+            </Link>
+            
 
             {/* Mobile Menu Button */}
             <button
