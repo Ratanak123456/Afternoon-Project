@@ -101,7 +101,7 @@ export default function Header() {
 
             {/* Login Button */}
             <a
-              href="/login"
+              href="/auth"
               className="hidden md:inline-flex items-center justify-center rounded-xl 
                          bg-[var(--color-primary)] px-3 py-2 text-sm font-semibold text-white 
                          shadow-sm hover:bg-[var(--color-primary-hover)] 
