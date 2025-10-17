@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Layout from "./app/Layout";
 import Home from "./app/Home";
@@ -9,7 +9,7 @@ import Detail from "./app/Detail";
 import LoginForm from "./components/auth/login/LoginForm";
 import AuthMiddleware from "./components/auth/middleware/AuthMiddleware";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   // Public Routes (Accessible without authentication)
   {
     path: "/",
@@ -43,11 +43,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <AuthMiddleware />, // Protect all child routes
         children: [
- 
-              {
-                path: "/detail/:type/:id",
-                element: <Detail />,
-              },
+          {
+            path: "/detail/:type/:id",
+            element: <Detail />,
+          },
         ],
       },
       // Redirect all unknown routes to login
