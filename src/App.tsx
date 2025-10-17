@@ -6,6 +6,7 @@ import Contact from './app/Contact';
 import Explore from './app/Explore';
 import NotFound from './app/NotFound';
 import Detail from './app/Detail';
+import Booking from './components/booking/Booking';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/detail/:type/:id",
         element: <Detail />,
+      },
+      {
+        path: "/booking",
+        element: <Booking/>
       }
       
     ]
