@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon, Menu, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../../assets/white.svg"
+import dark from "../../assets/dark.svg"
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false);
@@ -72,16 +74,19 @@ export default function Header() {
       <div className="px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 shrink-0">
-            <img
-              className="h-8 w-auto dark:invert"
-              src=" "
-              alt="Website Logo"
-            />
-            <span className="text-lg font-semibold text-[var(--color-text)] dark:text-gray-100">
-              Website Title
-            </span>
-          </a>
+<Link
+  to="/"
+  className="ml-8 flex items-center gap-3  "
+>
+  <div className="flex items-center justify-center bg-[var(--color-primary)]/10 backdrop-blur-md p-2 rounded-xl">
+    <img
+      src={isDark ? logo : dark}
+      alt="Website Logo"
+      className="h-12 w-auto drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] transition-transform duration-300 hover:rotate-3"
+    />
+  </div>
+</Link>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center md:gap-6">

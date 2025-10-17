@@ -71,7 +71,7 @@ export default function Explore() {
           </h1>
           <p
             className="
-      text-base sm:text-lg md:text-xl text-[var(--color-text)] dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
+      text-base sm:text-lg md:text-xl text-[var(--color-text)]  max-w-2xl mx-auto leading-relaxed"
           >
             Discover amazing destinations and accommodations that match your
             vibe 🌴✨
