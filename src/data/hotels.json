@@ -18,7 +18,7 @@
     "pricePerNight": 71,
     "rating": 5.0,
     "image": "https://res.klook.com/klook-hotel/image/upload/trip/200s190000017mdj242D4_R_550_412_R5.webp",
-    "destinationId": 1,
+    "destinationId": [1],
     "description": "3-minute walk from Pub Street",
     "amenities": ["Restaurant", "Spa", "Luggage storage", "Business center", "Free WiFi"]
 
@@ -30,7 +30,7 @@
     "pricePerNight": 116,
     "rating": 4.0,
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/69/1c/00/caption.jpg?w=1000&h=-1&s=1",
-    "destinationId": 4,
+    "destinationId": [4],
     "description": "Offers you a luxurious seaside escape.",
     "amenities": ["Fitness / spa locker rooms", "Free breakfast", "Casino and Gambling", "Free WiFi", "Spa"]
     

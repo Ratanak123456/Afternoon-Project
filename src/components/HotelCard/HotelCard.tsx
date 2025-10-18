@@ -11,6 +11,7 @@ export default function HotelCard({
   description,
   location,
   destinationId,
+  
 }: Hotel) {
   return (
     <Link to={`/detail/hotel/${id}`} className="relative block">

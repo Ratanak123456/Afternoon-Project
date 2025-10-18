@@ -5,6 +5,7 @@ export type Hotel = {
   pricePerNight: number;
   rating: number;
   image: string;
-  destinationId: number;
+  destinationId: number[];
   description: string;
+  amenities: string[];
 };
