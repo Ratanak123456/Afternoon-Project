@@ -1,6 +1,10 @@
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-hover)] text-white pt-12 pb-6">
+    /* CHANGES: 
+      - Replaced orange gradient with var(--color-card)
+      - Changed default text to var(--color-subtext)
+    */
+    <footer className="bg-[var(--color-card)] text-[var(--color-subtext)] pt-12 pb-6 border-t border-[var(--color-border)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="mb-6">
@@ -11,25 +15,34 @@ export default function Footer() {
                 className="h-16 w-auto rounded-lg shadow-lg"
               />
               <div>
-                <p className="text-xs text-white/70 mb-1">Organized by</p>
-                <span className="text-xl font-bold tracking-tight">ISTAD</span>
+                {/* CHANGED: text-white/70 to var(--color-subtext) */}
+                <p className="text-xs text-[var(--color-subtext)] mb-1">
+                  Organized by
+                </p>
+                {/* CHANGED: text-white to var(--color-text) */}
+                <span className="text-xl font-bold tracking-tight text-[var(--color-text)]">
+                  ISTAD
+                </span>
               </div>
             </div>
-            <p className="text-white/80 text-sm leading-relaxed">
+            {/* CHANGED: text-white/80 to var(--color-subtext) */}
+            <p className="text-[var(--color-subtext)] text-sm leading-relaxed">
               Institute of Science and Technology Advanced Development — Premier
               educational institution shaping future innovators.
             </p>
           </div>
 
           <div>
-            <h3 className="text-base font-semibold mb-3 uppercase tracking-wider text-white">
+            {/* CHANGED: text-white to var(--color-text) */}
+            <h3 className="text-base font-semibold mb-3 uppercase tracking-wider text-[var(--color-text)]">
               Customer Service
             </h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="./src/pages/about.html"
-                  className="text-white/80 hover:text-white text-sm transition"
+                  // CHANGED: text-white/80 to var(--color-subtext) and hover to var(--color-text)
+                  className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-sm transition"
                 >
                   Contact Us
                 </a>
@@ -37,7 +50,7 @@ export default function Footer() {
               <li>
                 <a
                   href="./index.html"
-                  className="text-white/80 hover:text-white text-sm transition"
+                  className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-sm transition"
                 >
                   FAQs
                 </a>
@@ -45,7 +58,7 @@ export default function Footer() {
               <li>
                 <a
                   href="./index.html"
-                  className="text-white/80 hover:text-white text-sm transition"
+                  className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-sm transition"
                 >
                   Shipping Policy
                 </a>
@@ -53,7 +66,7 @@ export default function Footer() {
               <li>
                 <a
                   href="./index.html"
-                  className="text-white/80 hover:text-white text-sm transition"
+                  className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-sm transition"
                 >
                   Returns & Exchanges
                 </a>
@@ -61,7 +74,7 @@ export default function Footer() {
               <li>
                 <a
                   href="./index.html"
-                  className="text-white/80 hover:text-white text-sm transition"
+                  className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-sm transition"
                 >
                   Track Your Order
                 </a>
@@ -70,14 +83,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-base font-semibold mb-3 uppercase tracking-wider text-white">
+            {/* CHANGED: text-white to var(--color-text) */}
+            <h3 className="text-base font-semibold mb-3 uppercase tracking-wider text-[var(--color-text)]">
               Product Categories
             </h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="./src/pages/shop/Categories/business.html"
-                  className="text-white/80 hover:text-white text-sm transition"
+                  className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-sm transition"
                 >
                   Business Laptops
                 </a>
@@ -85,7 +99,7 @@ export default function Footer() {
               <li>
                 <a
                   href="./src/pages/shop/Categories/gaming.html"
-                  className="text-white/80 hover:text-white text-sm transition"
+                  className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-sm transition"
                 >
                   Gaming Systems
                 </a>
@@ -93,7 +107,7 @@ export default function Footer() {
               <li>
                 <a
                   href="./src/pages/shop/Categories/desktop.html"
-                  className="text-white/80 hover:text-white text-sm transition"
+                  className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-sm transition"
                 >
                   Desktop Computers
                 </a>
@@ -101,7 +115,7 @@ export default function Footer() {
               <li>
                 <a
                   href="./src/pages/shop/Categories/creative.html"
-                  className="text-white/80 hover:text-white text-sm transition"
+                  className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-sm transition"
                 >
                   Creative Workstations
                 </a>
@@ -109,48 +123,63 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-base font-semibold mb-3 uppercase tracking-wider text-white">
+            {/* CHANGED: text-white to var(--color-text) */}
+            <h3 className="text-base font-semibold mb-3 uppercase tracking-wider text-[var(--color-text)]">
               Newsletter
             </h3>
-            <p className="text-white/80 text-sm mb-3">
+            {/* CHANGED: text-white/80 to var(--color-subtext) */}
+            <p className="text-[var(--color-subtext)] text-sm mb-3">
               Subscribe for exclusive deals and tech insights.
             </p>
             <div className="flex">
               <input
                 type="email"
                 placeholder="Your email"
-                className="px-3 py-2 w-full rounded-l-lg focus:outline-none text-gray-800 text-sm"
+                /* CHANGES: 
+                  - Set background to var(--color-bg)
+                  - Set text to var(--color-text)
+                  - Set placeholder text to var(--color-subtext)
+                */
+                className="px-3 py-2 w-full rounded-l-lg focus:outline-none bg-[var(--color-bg)] text-[var(--color-text)] placeholder:text-[var(--color-subtext)] text-sm"
               />
-              <button className="bg-white text-[var(--color-primary)] hover:bg-gray-100 px-4 rounded-r-lg transition">
+              {/* CHANGES: 
+                - Swapped to a neutral button style
+                - bg-white becomes var(--color-text)
+                - text-orange becomes var(--color-card) (or white in light mode)
+              */}
+              <button className="bg-[var(--color-text)] text-[var(--color-card)] hover:bg-[var(--color-subtext)] px-4 rounded-r-lg transition">
                 <i className="fas fa-paper-plane"></i>
               </button>
             </div>
-            <p className="text-white/60 text-xs mt-2">
+            {/* CHANGED: text-white/60 to var(--color-subtext) with more opacity */}
+            <p className="text-[var(--color-subtext)]/80 text-xs mt-2">
               By subscribing, you agree to our Privacy Policy
             </p>
           </div>
         </div>
 
-        <div className="border-t border-white/30 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/70 text-xs mb-3 md:mb-0">
+        {/* CHANGED: border-white/30 to var(--color-border) */}
+        <div className="border-t border-[var(--color-border)] pt-6 flex flex-col md:flex-row justify-between items-center">
+          {/* CHANGED: text-white/70 to var(--color-subtext) */}
+          <p className="text-[var(--color-subtext)] text-xs mb-3 md:mb-0">
             © 2025 TechGo. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <a
               href="#"
-              className="text-white/70 hover:text-white text-xs transition"
+              className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-xs transition"
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="text-white/70 hover:text-white text-xs transition"
+              className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-xs transition"
             >
               Terms of Service
             </a>
             <a
               href="#"
-              className="text-white/70 hover:text-white text-xs transition"
+              className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-xs transition"
             >
               Cookies
             </a>
