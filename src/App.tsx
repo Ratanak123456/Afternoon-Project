@@ -6,14 +6,13 @@ import Contact from './app/Contact';
 import Explore from './app/Explore';
 import NotFound from './app/NotFound';
 import Detail from './app/Detail';
-import Booking from './components/booking/Booking';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     errorElement: <NotFound />,
-    children:[
+    children: [
       {
         path: "/",
         element: <Home />,
@@ -29,10 +28,6 @@ const router = createBrowserRouter([
       {
         path: "/detail/:type/:id",
         element: <Detail />,
-      },
-      {
-        path: "/booking",
-        element: <Booking/>
       }
       
     ]
@@ -40,18 +35,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  
   return (
     <>
-    <RouterProvider router={router} />
-    
-  
-    
-    
+      <RouterProvider router={router} />
     </>
-    
-  )
+  );
 }
 
-
-export default App
+export default App;

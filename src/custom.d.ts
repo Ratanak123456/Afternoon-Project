@@ -1,0 +1,29 @@
+// Declarations for importing assets in TypeScript
+declare module "*.css";
+declare module "*.scss";
+declare module "*.sass";
+
+declare module "*.svg" {
+  const src: string;
+  export default src;
+}
+
+declare module "*.png" {
+  const src: string;
+  export default src;
+}
+
+declare module "*.jpg" {
+  const src: string;
+  export default src;
+}
+
+declare module "*.jpeg" {
+  const src: string;
+  export default src;
+}
+
+declare module "*.gif" {
+  const src: string;
+  export default src;
+}
