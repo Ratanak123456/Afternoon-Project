@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
 import type { Destination } from "../../types/destination";
 import StarRating from "../StarRating/StarRating";
+import { Link } from "react-router";
 
-export default function DestinationCard({ id, image, name, country, description, rating, priceRange }: Destination) {
+export default function DestinationCard({id,image, name, country, description, rating, priceRange }: Destination) {
   return (
-    <Link to={`/detail/destination/${id}`} className="relative block">
-      {/* 💫 Card */}
+    <Link to={`/detail/destination/${id}`} className="no-underline">
       <div className="bg-[var(--color-card)] dark:bg-[var(--color-card)] rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 border border-[var(--color-border)]">
         <div className="relative">
           <img

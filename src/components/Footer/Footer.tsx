@@ -6,32 +6,31 @@ export default function Footer() {
     */
     <footer className="bg-[var(--color-card)] text-[var(--color-subtext)] pt-12 pb-6 border-t border-[var(--color-border)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+          {/* Logo + About */}
           <div className="mb-6">
             <div className="flex items-center space-x-4 mb-4">
               <img
-                src="./src/Image/logo-square-01.png"
-                alt="School Logo"
+                src="/src/Image/logo-square-01.png"
+                alt="KechTravels Logo"
                 className="h-16 w-auto rounded-lg shadow-lg"
               />
               <div>
-                {/* CHANGED: text-white/70 to var(--color-subtext) */}
-                <p className="text-xs text-[var(--color-subtext)] mb-1">
-                  Organized by
-                </p>
-                {/* CHANGED: text-white to var(--color-text) */}
-                <span className="text-xl font-bold tracking-tight text-[var(--color-text)]">
-                  ISTAD
+                <p className="text-xs text-white/70 mb-1">Powered by</p>
+                <span className="text-xl font-bold tracking-tight">
+                  KechTravels
                 </span>
               </div>
             </div>
-            {/* CHANGED: text-white/80 to var(--color-subtext) */}
-            <p className="text-[var(--color-subtext)] text-sm leading-relaxed">
-              Institute of Science and Technology Advanced Development — Premier
-              educational institution shaping future innovators.
+            <p className="text-white/80 text-sm leading-relaxed">
+              Discover the beauty of Cambodia and beyond. KechTravels helps you
+              explore stunning destinations, find the best hotels, and plan
+              unforgettable adventures — all in one place.
             </p>
           </div>
 
+          {/* Explore Links */}
           <div>
             {/* CHANGED: text-white to var(--color-text) */}
             <h3 className="text-base font-semibold mb-3 uppercase tracking-wider text-[var(--color-text)]">
@@ -60,7 +59,7 @@ export default function Footer() {
                   href="./index.html"
                   className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-sm transition"
                 >
-                  Shipping Policy
+                  Terms & Conditions
                 </a>
               </li>
               <li>
@@ -164,7 +163,7 @@ export default function Footer() {
           <p className="text-[var(--color-subtext)] text-xs mb-3 md:mb-0">
             © 2025 TechGo. All rights reserved.
           </p>
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 text-xs">
             <a
               href="#"
               className="text-[var(--color-subtext)] hover:text-[var(--color-text)] text-xs transition"
