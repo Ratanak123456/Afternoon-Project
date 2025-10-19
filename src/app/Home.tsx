@@ -7,7 +7,7 @@ import topRatedHotels from "../data/hotels.json";
 import DestinationCard from "../components/DestinationCard/DestinationCard";
 import HotelCard from "../components/HotelCard/HotelCard";
 import SearchBar from "../components/SearchBar/SearchBar";
-import About from "../components/aboutSection/AboutSection"; // ensure path & case exactly match the file system
+import AboutSection from "../components/aboutSection/AboutSection"; // ensure path & case exactly match the file system
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <About />
+      <AboutSection />
 
       {/* FAQ Section */}
       <FAQ />
