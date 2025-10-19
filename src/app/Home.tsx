@@ -116,9 +116,10 @@ export default function Home() {
                 description={hotel.description}
                 destinationId={
                   Array.isArray(hotel.destinationId)
-                    ? hotel.destinationId[0]
-                    : hotel.destinationId
+                    ? hotel.destinationId
+                    : [hotel.destinationId]
                 }
+                amenities={hotel.amenities ?? []}
               />
             ))}
           </div>
