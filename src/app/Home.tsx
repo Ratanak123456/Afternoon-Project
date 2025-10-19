@@ -1,13 +1,14 @@
 import newHeroImage from "../assets/pexels-asadphoto-3601422.jpg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import About from "../components/aboutSection/About";
+import { Link } from "react-router";
 import FAQ from "../components/faq/FAQ";
 import featuredDestinations from "../data/destinations.json";
 import topRatedHotels from "../data/hotels.json";
 import DestinationCard from "../components/DestinationCard/DestinationCard";
 import HotelCard from "../components/HotelCard/HotelCard";
 import SearchBar from "../components/SearchBar/SearchBar";
+import About from "../components/aboutSection/AboutSection";
+
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
