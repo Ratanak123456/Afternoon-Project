@@ -23,17 +23,15 @@ const defaultAvatar = `data:image/svg+xml;utf8,${encodeURIComponent(
   `<svg xmlns='http://www.w3.org/2000/svg' width='256' height='256'><rect width='100%' height='100%' fill='%23F3F4F6'/><g transform='translate(64,48)'><circle cx='64' cy='56' r='40' fill='%23E5E7EB'/><rect x='0' y='120' width='128' height='20' rx='10' fill='%23E5E7EB'/></g></svg>`
 )}`;
 
-export default function Profile(): JSX.Element {
-  const [profile, setProfile] = useState<Profile>({
-    name: "Alex Morgan",
-    email: "alex.morgan@example.com",
-    mobile: "+1 (555) 123-4567",
-    location: "USA",
-    avatar: defaultAvatar,
-    notif: "Allow",
-  });
-
-  const [isEditing, setIsEditing] = useState(false);
+export default function Profile() {
+   const [profile, setProfile] = useState<Profile>({
+     name: "Alex Morgan",
+     email: "alex.morgan@example.com",
+     mobile: "+1 (555) 123-4567",
+     location: "USA",
+     avatar: defaultAvatar,
+     notif: "Allow",
+   });
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
@@ -49,14 +47,6 @@ export default function Profile(): JSX.Element {
     } catch {}
   }, []);
 
-  const saveProfile = () => {
-    Object.entries(profile).forEach(([key, val]) => {
-      if (val !== undefined)
-        localStorage.setItem(STORAGE_KEYS[key as keyof typeof STORAGE_KEYS], val);
-    });
-    alert("✅ Profile saved locally");
-    setIsEditing(false);
-  };
 
   const onAvatarClick = () => fileInputRef.current?.click();
 
