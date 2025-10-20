@@ -1,13 +1,13 @@
 import newHeroImage from "../assets/pexels-asadphoto-3601422.jpg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import About from "../components/aboutSection/About";
 import FAQ from "../components/faq/FAQ";
 import featuredDestinations from "../data/destinations.json";
 import topRatedHotels from "../data/hotels.json";
 import DestinationCard from "../components/DestinationCard/DestinationCard";
 import HotelCard from "../components/HotelCard/HotelCard";
 import SearchBar from "../components/SearchBar/SearchBar";
-import ASec from "../components/aboutSection/ASec";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -29,7 +29,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-[#FBF9F4]">
             Discover Your Next
             {/* 2. "Adventure" text changed to coral accent */}
-            <span className="text-[#E8927A]"> Adventure</span>
+            <span className="text-[var(--color-primary)]"> Adventure</span>
           </h1>
 
           {/* 3. Subtitle text changed to semi-transparent white */}
@@ -141,7 +141,7 @@ export default function Home() {
       <FAQ />
       {/* CTA Section - "Ready to Start Your Journey?" */}
       <section
-        className="py-16 bg-[#dd7f5f]" // Fixed background color as requested
+        className="py-16 dark:bg-[var(--color-primary)]" // Fixed background color as requested
       >
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2

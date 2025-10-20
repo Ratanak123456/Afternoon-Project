@@ -1,3 +1,6 @@
+import { Link } from "react-router";
+import logo from "../../assets/white.svg";
+
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-hover)] text-white pt-12 pb-6 transition-colors duration-300">
@@ -8,17 +11,17 @@ export default function Footer() {
           <div className="mb-6">
             <div className="flex items-center space-x-4 mb-4">
               <img
-                src="/src/Image/logo-square-01.png"
-                alt="KechTravels Logo"
-                className="h-16 w-auto rounded-lg shadow-lg"
+                src={logo}
+                alt="KechTease Logo"
+                className="h-16 w-auto"
               />
               <div>
                 <p className="text-xs text-white/70 mb-1">Powered by</p>
-                <span className="text-xl font-bold tracking-tight">KechTravels</span>
+                <span className="text-xl font-bold tracking-tight">KechTease</span>
               </div>
             </div>
             <p className="text-white/80 text-sm leading-relaxed">
-              Discover the beauty of Cambodia and beyond. KechTravels helps you explore stunning destinations, 
+              Discover the beauty of Cambodia and beyond. KechTease helps you explore stunning destinations, 
               find the best hotels, and plan unforgettable adventures — all in one place.
             </p>
           </div>
@@ -30,36 +33,36 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/explore"
+                <Link
+                  to="/explore"
                   className="text-white/80 hover:text-white text-sm transition"
                 >
                   Destinations
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/hotels"
+                <Link
+                  to="/explore"
                   className="text-white/80 hover:text-white text-sm transition"
                 >
                   Hotels
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/guides"
+                <Link
+                  to="/"
                   className="text-white/80 hover:text-white text-sm transition"
                 >
                   Travel Guides
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/deals"
+                <Link
+                  to="/"
                   className="text-white/80 hover:text-white text-sm transition"
                 >
                   Deals & Packages
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -71,36 +74,36 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="text-white/80 hover:text-white text-sm transition"
                 >
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/faq"
+                <Link
+                  to="/"
                   className="text-white/80 hover:text-white text-sm transition"
                 >
                   FAQs
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/terms"
+                <Link
+                  to="/"
                   className="text-white/80 hover:text-white text-sm transition"
                 >
                   Terms & Conditions
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/privacy"
+                <Link
+                  to="/"
                   className="text-white/80 hover:text-white text-sm transition"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -124,7 +127,7 @@ export default function Footer() {
               </button>
             </div>
             <p className="text-white/60 text-xs mt-2">
-              By subscribing, you agree to receive updates from KechTravels.
+              By subscribing, you agree to receive updates from KechTease.
             </p>
           </div>
         </div>
@@ -132,27 +135,27 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-white/30 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/70 text-xs mb-3 md:mb-0">
-            © 2025 KechTravels. All rights reserved.
+            © 2025 KechTease. All rights reserved.
           </p>
           <div className="flex space-x-4 text-xs">
-            <a
-              href="/privacy"
+            <Link
+              to="/privacy"
               className="text-white/70 hover:text-white transition"
             >
               Privacy Policy
-            </a>
-            <a
-              href="/terms"
+            </Link>
+            <Link
+              to="/terms"
               className="text-white/70 hover:text-white transition"
             >
               Terms of Service
-            </a>
-            <a
-              href="/cookies"
+            </Link>
+            <Link
+              to="/cookies"
               className="text-white/70 hover:text-white transition"
             >
               Cookies
-            </a>
+            </Link>
           </div>
         </div>
       </div>
