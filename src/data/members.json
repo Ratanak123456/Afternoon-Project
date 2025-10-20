@@ -24,7 +24,7 @@
       "id": 4,
       "name": "Lorn Somnang",
       "role": "Frontend Design",
-      "image": "https://via.placeholder.com/150",
+      "image": "/assets/somnang.PNG",
       "github": "https://github.com/DeeChay03"
     },
         {
@@ -38,7 +38,7 @@
       "id": 7,
       "name": "Heang Bunlong",
       "role": "Frontend Design",
-      "image": "https://via.placeholder.com/150",
+      "image": "/assets/bunlong.JPG",
       "github": "https://github.com/heangbunlong-zk"
     }
  ]
