@@ -73,7 +73,7 @@ export default function Detail() {
               <DetailRelatedHotels hotels={relatedHotels} name={item.name} />
             )}
 
-            {type === "hotel" && <DetailBookButton />}
+            {type === "hotel" && <DetailBookButton hotel={item} />}
           </div>
         </div>
       </div>

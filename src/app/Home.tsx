@@ -105,22 +105,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {topRatedHotels.map((hotel) => (
-              <HotelCard
-                key={hotel.id}
-                id={hotel.id}
-                name={hotel.name}
-                location={hotel.location}
-                pricePerNight={hotel.pricePerNight}
-                rating={hotel.rating}
-                image={hotel.image}
-                description={hotel.description}
-                destinationId={
-                  Array.isArray(hotel.destinationId)
-                    ? hotel.destinationId
-                    : [hotel.destinationId]
-                }
-                amenities={hotel.amenities ?? []}
-              />
+              <HotelCard key={hotel.id} {...hotel} />
             ))}
           </div>
           <div className="text-center mt-12">

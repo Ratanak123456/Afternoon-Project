@@ -8,7 +8,7 @@ import NotFound from "./app/NotFound";
 import Detail from "./app/Detail";
 import LoginForm from "./components/auth/login/LoginForm";
 import AuthMiddleware from "./components/auth/middleware/AuthMiddleware";
-// import Profile from "./app/Profile";
+import Profile from "./app/Profile";
 
 const router = createBrowserRouter([
   // Public Routes (Accessible without authentication)
@@ -48,10 +48,10 @@ const router = createBrowserRouter([
                 path: "/detail/:type/:id",
                 element: <Detail />,
               },
-              // {
-              //   path: "/profile",
-              //   element: <Profile />
-              // },
+              {
+                path: "/profile",
+                element: <Profile />
+              },
         ],
       },
       // Redirect all unknown routes to login

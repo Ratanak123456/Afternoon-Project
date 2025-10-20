@@ -8,4 +8,16 @@ export type Hotel = {
   destinationId: number[];
   description: string;
   amenities: string[];
+  longDes: string;
+  roomTypes: {
+    standard: {
+      price: number;
+    };
+    deluxe: {
+      price: number;
+    };
+    suite: {
+      price: number;
+    };
+  };
 };

@@ -17,7 +17,12 @@
       "Free WiFi",
       "Bathtub",
       "Kitchenette"
-    ]
+    ],
+    "roomTypes": {
+      "standard": { "price": 62 },
+      "deluxe": { "price": 95 },
+      "suite": { "price": 140 }
+    }
   },
   {
     "id": 2,
@@ -35,7 +40,12 @@
       "Luggage storage",
       "Business center",
       "Free WiFi"
-    ]
+    ],
+    "roomTypes": {
+      "standard": { "price": 71 },
+      "deluxe": { "price": 110 },
+      "suite": { "price": 180 }
+    }
   },
   {
     "id": 3,
@@ -53,6 +63,11 @@
       "Casino and Gambling",
       "Free WiFi",
       "Spa"
-    ]
+    ],
+    "roomTypes": {
+      "standard": { "price": 116 },
+      "deluxe": { "price": 160 },
+      "suite": { "price": 250 }
+    }
   }
 ]
