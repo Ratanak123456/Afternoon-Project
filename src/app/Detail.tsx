@@ -55,7 +55,7 @@ export default function Detail() {
           <DetailTabs />
 
           <div className="p-6 space-y-8">
-            <DetailAbout description={item.description} />
+            <DetailAbout longDes={item.longDes} />
 
             <DetailInfoGrid
               type={type!}

@@ -6,10 +6,18 @@
     "pricePerNight": 62,
     "rating": 5.0,
     "image": "https://ik.imagekit.io/tvlk/apr-asset/TzEv3ZUmG4-4Dz22hvmO9NUDzw1DGCIdWl4oPtKumOg=/lodging/25000000/24090000/24085000/24084901/0506bc3a_z.jpg?_src=imagekit&tr=c-at_max,f-jpg,h-360,pr-true,q-80,w-640",
-    "destinationId": [2,3],
+    "destinationId": [2, 3],
     "description": "Only a short walk from Mekong River.",
-    "amenities": ["Restaurant", "Private bathroom", "Air conditioning", "Parking", "Free WiFi" , "Bathtub", "Kitchenette"]
-    
+    "longDes": "Hotel Emion Phnom Penh is a luxury hotel located center of Phnom Penh, the capital city of Cambodia, near by The Mekong River and Tonle Sap River. The hotel is 19 stories above ground and 240 rooms. All rooms are equipped with kitchen, bathroom with washroom, separate toilet and washlet. On the 19th floor on the top floor you will find a breakfast room with river views in front of you, a fitness gym where you can refresh during your stay, and a kids room where children can play with confidence. In addition, you can enjoy the resort feeling in the infinity pool with pool bar. In the vicinity of the hotel, facilities such as the largest shopping mall in Cambodia, downtown area and restaurants are all located, making it suitable for sightseeing and business use. The hotel is about 50 minutes drive away from the airport.",
+    "amenities": [
+      "Restaurant",
+      "Private bathroom",
+      "Air conditioning",
+      "Parking",
+      "Free WiFi",
+      "Bathtub",
+      "Kitchenette"
+    ]
   },
   {
     "id": 2,
@@ -20,8 +28,14 @@
     "image": "https://res.klook.com/klook-hotel/image/upload/trip/200s190000017mdj242D4_R_550_412_R5.webp",
     "destinationId": [1],
     "description": "3-minute walk from Pub Street",
-    "amenities": ["Restaurant", "Spa", "Luggage storage", "Business center", "Free WiFi"]
-
+    "longDes": "The business information provided appears to be for Metta Residence and Spa, not Golden Temple Residence, despite the query. Metta Residence and Spa is a highly-rated lodging option in Siem Reap, praised for its relaxing ambiance, beautiful pool with a bar area, spa services, and excellent, attentive staff. Guests frequently highlight the comfortable, spacious rooms with balconies overlooking the pool, the delicious food and cocktails, and the convenient central location near major attractions like Angkor Wat and Pub Street. The breakfast buffet is noted for its variety and quality. While most reviews are overwhelmingly positive—rating the hotel 5 out of 5 for service, cleanliness, and value—some guests mention minor drawbacks such as firm mattresses or slightly dated room decor. Overall, the hotel is consistently described as a peaceful oasis offering a welcoming, home-like atmosphere with exceptional customer service.",
+    "amenities": [
+      "Restaurant",
+      "Spa",
+      "Luggage storage",
+      "Business center",
+      "Free WiFi"
+    ]
   },
   {
     "id": 3,
@@ -32,7 +46,13 @@
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/69/1c/00/caption.jpg?w=1000&h=-1&s=1",
     "destinationId": [4],
     "description": "Offers you a luxurious seaside escape.",
-    "amenities": ["Fitness / spa locker rooms", "Free breakfast", "Casino and Gambling", "Free WiFi", "Spa"]
-    
+    "longDes": "Queenco Hotel & Casino is a highly-rated lodging option located near Victory Beach in Sihanoukville, offering comfortable accommodations with direct beach access and scenic ocean views. Guests praise the excellent service, friendly and attentive staff, and well-maintained facilities including a swimming pool, on-site restaurant with diverse menu options including vegetarian cuisine, and entertainment such as live music. The hotel also features a casino, billiards, a beauty salon, and a souvenir shop, while the 24-hour front desk assists with excursions, ticketing, and concierge services. It is conveniently close to the harbor for island day trips. The property is family-friendly and offers elegant transport from the port. While most reviews highlight exceptional experiences, with many rating it 5/5 for comfort, cleanliness, and hospitality, there is a notable negative review accusing the casino of unfair practices and advising against gambling there. Overall, it maintains a strong 4.2/5 rating from 234 reviews, reflecting widespread guest satisfaction with some concerns limited to the casino operations.",
+    "amenities": [
+      "Fitness / spa locker rooms",
+      "Free breakfast",
+      "Casino and Gambling",
+      "Free WiFi",
+      "Spa"
+    ]
   }
 ]

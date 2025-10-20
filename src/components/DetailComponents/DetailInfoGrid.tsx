@@ -1,3 +1,5 @@
+import StarRating from "../StarRating/StarRating";
+
 type DetailInfoGridProps ={
   type: string;
   pricePerNight?: number;
@@ -19,8 +21,7 @@ export default function DetailInfoGrid({ type, pricePerNight, priceRange, rating
       </div>
       <div className="text-center p-4 bg-[var(--color-card)] rounded-lg shadow-md">
         <div className="flex justify-center items-center space-x-1 mb-2">
-          <span className="text-yellow-400 text-xl">★</span>
-          <span className="text-[var(--color-text)]">{rating}</span>
+          <span className="text-yellow-400 text-xl"><StarRating rating={rating} /></span>
         </div>
         <p className="text-[var(--color-subtext)]">Rating</p>
       </div>
