@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useBookings } from "../components/auth/middleware/BookingContext";
 import BookingCard from "../components/BookingCard/BookingCard";
+import { useWishlist } from "../components/auth/middleware/WishlistContext";
+import HotelCard from "../components/HotelCard/HotelCard";
 
 type Profile = {
   name: string;
@@ -36,6 +38,7 @@ export default function Profile() {
   });
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const { bookings } = useBookings();
+  const { wishlist } = useWishlist();
   const [currentView, setCurrentView] = useState("Profile Overview");
 
   useEffect(() => {
@@ -74,7 +77,7 @@ export default function Profile() {
   const navItems = [
     { label: "Profile Overview", count: 0 },
     { label: "My Booking", count: bookings.length },
-    { label: "Wishlist", count: 3 },
+    { label: "Wishlist", count: wishlist.length },
     { label: "History", count: 2 },
   ];
 
@@ -252,6 +255,23 @@ export default function Profile() {
                 {bookings.map((booking) => (
                   <BookingCard key={booking.hotel.id} booking={booking} />
                 ))}
+              </div>
+            </div>
+          )}
+          {currentView === "Wishlist" && (
+            <div className="bg-[var(--color-card)] dark:bg-[var(--color-card)] rounded-2xl shadow-lg border border-[var(--color-border)] p-6">
+              <h3 className="font-semibold text-lg mb-1">My Wishlist</h3>
+              <p className="text-[var(--color-subtext)] mb-4">
+                Your favorite hotels and destinations.
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                {wishlist.length > 0 ? (
+                  wishlist.map((hotel) => (
+                    <HotelCard key={hotel.id} {...hotel} />
+                  ))
+                ) : (
+                  <p>Your wishlist is empty.</p>
+                )}
               </div>
             </div>
           )}

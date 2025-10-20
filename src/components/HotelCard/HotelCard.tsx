@@ -1,18 +1,24 @@
 import { Link } from "react-router-dom";
 import type { Hotel } from "../../types/hotel";
 import StarRating from "../StarRating/StarRating";
+import { useWishlist } from "../auth/middleware/WishlistContext";
 
-export default function HotelCard({
-  id,
-  name,
-  image,
-  pricePerNight,
-  rating,
-  description,
-  location,
-  destinationId,
-  
-}: Hotel) {
+export default function HotelCard(hotel: Hotel) {
+  const { id, name, image, pricePerNight, rating, description, location, destinationId } = hotel;
+  const { addToWishlist, removeFromWishlist, isWishlisted } = useWishlist();
+
+  const isItemWishlisted = isWishlisted(id);
+
+  const toggleWishlist = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (isItemWishlisted) {
+      removeFromWishlist(id);
+    } else {
+      addToWishlist(hotel);
+    }
+  };
+
   return (
     <Link to={`/detail/hotel/${id}`} className="relative block">
       <div
@@ -24,15 +30,16 @@ export default function HotelCard({
         <div>
           <img src={image} alt={name} className="w-full h-48 object-cover" />
           <button
-            className="absolute top-3 right-3 p-2 rounded-full 
+            onClick={toggleWishlist}
+            className={`absolute top-3 right-3 p-2 rounded-full 
                  bg-[var(--color-card)] text-[var(--color-subtext)] 
                  shadow-md border border-[var(--color-border)]
                  hover:bg-[var(--color-primary)] hover:text-white 
-                 transition-all duration-300"
+                 transition-all duration-300 ${isItemWishlisted ? "text-[var(--color-primary)]" : ""}`}
           >
             <svg
               className="w-5 h-5"
-              fill="none"
+              fill={isItemWishlisted ? "currentColor" : "none"}
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
