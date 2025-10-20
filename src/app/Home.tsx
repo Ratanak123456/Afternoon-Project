@@ -7,6 +7,7 @@ import topRatedHotels from "../data/hotels.json";
 import DestinationCard from "../components/DestinationCard/DestinationCard";
 import HotelCard from "../components/HotelCard/HotelCard";
 import SearchBar from "../components/SearchBar/SearchBar";
+import ASec from "../components/aboutSection/ASec";
 // import AboutSection from "../components/aboutSection/AboutSection"; // ensure path & case exactly match the file system
 
 export default function Home() {
@@ -135,13 +136,13 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      {/* <AboutSection /> */}
+      <ASec />
 
       {/* FAQ Section */}
       <FAQ />
       {/* CTA Section - "Ready to Start Your Journey?" */}
       <section
-        className="py-16 bg-[#dd7f5f]" // Fixed background color as requested
+        className="py-16 dark:bg-[var(--color-primary)]" // Fixed background color as requested
       >
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2
