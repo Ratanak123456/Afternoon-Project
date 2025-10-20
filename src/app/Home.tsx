@@ -30,7 +30,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-[#FBF9F4]">
             Discover Your Next
             {/* 2. "Adventure" text changed to coral accent */}
-            <span className="text-[#E8927A]"> Adventure</span>
+            <span className="text-[var(--color-primary)]"> Adventure</span>
           </h1>
 
           {/* 3. Subtitle text changed to semi-transparent white */}
