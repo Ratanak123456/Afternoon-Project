@@ -4,8 +4,8 @@ import { Search, X } from "lucide-react";
 interface SearchBarProps {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-
-  onSearchSubmit: (query: string) => void;
+  // Make this optional
+  onSearchSubmit?: (query: string) => void;
 }
 
 export default function SearchBar({
@@ -22,19 +22,23 @@ export default function SearchBar({
     { label: "Tonle Sap", icon: "🌊" },
   ];
 
-  // Inside SearchBar.tsx
-
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
-    onSearchSubmit(searchQuery);
+    // Check if the function exists before calling
+    if (onSearchSubmit) {
+      onSearchSubmit(searchQuery);
+    }
     console.log("Search triggered:", searchQuery);
   };
 
   const handleSuggestionClick = (suggestion: string) => {
     setSearchQuery(suggestion);
-    onSearchSubmit(suggestion);
+    // Check if the function exists before calling
+    if (onSearchSubmit) {
+      onSearchSubmit(suggestion);
+    }
+    console.log("Suggestion selected:", suggestion);
   };
-
   return (
     <div className="w-full max-w-4xl mx-auto px-3 sm:px-4 md:px-6">
       {/* Main container for the search bar */}
