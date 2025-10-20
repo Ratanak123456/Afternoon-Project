@@ -4,13 +4,14 @@ import { Search, X } from "lucide-react";
 interface SearchBarProps {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-  onSearch?: () => void;
+
+  onSearchSubmit: (query: string) => void;
 }
 
 export default function SearchBar({
   searchQuery,
   setSearchQuery,
-  onSearch,
+  onSearchSubmit,
 }: SearchBarProps) {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -21,14 +22,17 @@ export default function SearchBar({
     { label: "Tonle Sap", icon: "🌊" },
   ];
 
+  // Inside SearchBar.tsx
+
   const handleSearch = () => {
-    if (onSearch) onSearch();
+    if (!searchQuery.trim()) return;
+    onSearchSubmit(searchQuery);
     console.log("Search triggered:", searchQuery);
   };
 
   const handleSuggestionClick = (suggestion: string) => {
     setSearchQuery(suggestion);
-    console.log("Suggestion selected:", suggestion);
+    onSearchSubmit(suggestion);
   };
 
   return (
