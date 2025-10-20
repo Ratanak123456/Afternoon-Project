@@ -5,33 +5,32 @@
 
 /* ===== ☀️ LIGHT MODE ===== */
 :root {
-  --color-primary: #F97316;     
-  --color-primary-hover: #EA580C;
-  --color-accent: #0D9488;      
-  --color-bg: #FDFDFC;
-  --color-card: #FFFFFF;
-  --color-text: #1E293B;
-  --color-subtext: #64748B;
-  --color-border: #E2E8F0;
+  /* ... existing light mode variables ... */
+  --color-bg: #fbf9f4;
+  --color-text: #433a3f; /* Changed from black to match your screenshots */
+  --color-subtext: #86797e; /* Changed from gray to match your screenshots */
+  --color-subtext-special: #95888d;
+  --color-card: #ffffff;
+  --color-border: #e0e0e0;
+  --color-primary: #e8927a;
+  --color-primary-hover: #d47b63;
+
+  /* NEW: Hero Search Chip Colors (Light Mode) */
+  --color-hero-chip-bg: #ffffff; /* White background for light mode chips */
+  --color-hero-chip-text: #2d3748; /* Dark text for light mode chips */
 }
 
-/* ===== 🌙 DARK MODE ===== */
 .dark {
-  --color-primary: #FB923C;
-  --color-primary-hover: #F97316;
-  --color-accent: #14B8A6;
-  --color-bg: #0F172A;
-  --color-card: #1E293B;
-  --color-text: #F1F5F9;
-  --color-subtext: #94A3B8;
-  --color-border: #334155;
-}
+  /* ... existing dark mode variables ... */
+  --color-bg: #1a1a1a;
+  --color-text: #eaeaea;
+  --color-subtext: #bbbbbb;
+  --color-card: #2d2d2d;
+  --color-border: #444444;
+  --color-primary: #e8927a;
+  --color-primary-hover: #d47b63;
 
-.no-scroll {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.no-scroll::-webkit-scrollbar{
-  display: none;
+  /* NEW: Hero Search Chip Colors (Dark Mode) */
+  --color-hero-chip-bg: #334155; /* Dark background for dark mode chips */
+  --color-hero-chip-text: #f8fafc; /* Light text for dark mode chips */
 }
