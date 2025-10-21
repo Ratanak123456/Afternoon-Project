@@ -6,7 +6,7 @@ import { IoEyeSharp } from "react-icons/io5";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";  // Import useNavigate
-import Loader from "../loader/Loader";
+import TravelLoader from "../loader/Loader";
 
 type ValueTypes = {
     email: string;
@@ -62,7 +62,7 @@ export default function LoginForm() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-screen bg-gradient-to-br from-blue-900 to-blue-600">
-        <Loader />
+        <TravelLoader />
       </div>
     );
   }

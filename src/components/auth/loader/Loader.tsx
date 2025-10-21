@@ -1,60 +1,83 @@
-import styled from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
-const Loader = () => {
+const TravelLoader = () => {
   return (
-    <StyledWrapper>
-      <div className="loading-wave">
-        <div className="loading-bar" />
-        <div className="loading-bar" />
-        <div className="loading-bar" />
-        <div className="loading-bar" />
-      </div>
-    </StyledWrapper>
+    <Loader>
+      <Wrapper>
+        <Text>LOADING</Text>
+        <Box />
+      </Wrapper>
+    </Loader>
   );
-}
+};
 
-const StyledWrapper = styled.div`
-  .loading-wave {
-    width: 300px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+export default TravelLoader;
+
+// 🔸 Animations (copied exactly)
+const loading = keyframes`
+  0% {
+    transform: translateX(-20px);
   }
+  100% {
+    transform: translateX(20px);
+  }
+`;
 
-  .loading-bar {
+const loading2 = keyframes`
+  0% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(50px);
+  }
+`;
+
+// 🔸 Styled Components (copied exactly from your CSS)
+const Loader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Wrapper = styled.div`
+  width: 180px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+`;
+
+const Text = styled.div`
+  z-index: 3;
+  font-family: Whitney, -apple-system, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  filter: drop-shadow(2px 2px 0px #ff9e02);
+`;
+
+const Box = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #ef5d2e;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ${loading} ease-in-out 0.9s infinite alternate-reverse;
+
+  &::before {
+    content: "";
     width: 20px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: #3498db;
-    border-radius: 5px;
-    animation: loading-wave-animation 1s ease-in-out infinite;
+    height: 170%;
+    background-color: #ff9d0089;
+    position: absolute;
+    z-index: 1;
+    animation: ${loading2} ease-in-out 0.9s infinite alternate-reverse;
   }
-
-  .loading-bar:nth-child(2) {
-    animation-delay: 0.1s;
-  }
-
-  .loading-bar:nth-child(3) {
-    animation-delay: 0.2s;
-  }
-
-  .loading-bar:nth-child(4) {
-    animation-delay: 0.3s;
-  }
-
-  @keyframes loading-wave-animation {
-    0% {
-      height: 10px;
-    }
-
-    50% {
-      height: 50px;
-    }
-
-    100% {
-      height: 10px;
-    }
-  }`;
-
-export default Loader;
+`;
+  
