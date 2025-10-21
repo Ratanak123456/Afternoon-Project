@@ -9,15 +9,23 @@ export default function Header() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+    const [userAvatar, setUserAvatar] = useState<string>("");
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     setIsAuthenticated(!!token);
+      const user = localStorage.getItem("user");
+      if (user) {
+        const userData = JSON.parse(user);
+        setUserAvatar(userData.avatar || "https://cdn-icons-png.flaticon.com/512/3135/3135715.png");
+      }
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+      localStorage.removeItem("user");
     setIsAuthenticated(false);
+      setUserAvatar("");
     navigate("/");
   };
 
@@ -122,7 +130,7 @@ export default function Header() {
                   className="overflow-hidden rounded-full border border-gray-300 shadow-inner hover:shadow-md transition-all duration-200"
                 >
                   <img
-                    src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
+                      src={userAvatar}
                     alt="Profile"
                     className="w-9 h-9 rounded-full object-cover"
                   />
@@ -135,7 +143,7 @@ export default function Header() {
                     className="overflow-hidden rounded-full border border-gray-300 shadow-inner hover:shadow-md transition-all duration-200"
                   >
                     <img
-                      src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
+                        src={userAvatar}
                       alt="Profile"
                       className="w-9 h-9 rounded-full object-cover"
                     />
