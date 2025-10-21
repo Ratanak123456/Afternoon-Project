@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "profile": "/assets/sarenratanak.jpg",
+    "name": "Saren Ratanak",
+    "job": "Front-End Dev",
+    "feedback":
+      "Great free content with a smooth UI! Adding interactive quizzes or coding challenges would make it even better.",
+    "star": 4
+  },
+  {
+    "id": 2,
+    "profile": "/assets/bongwatana.JPG",
+    "name": "Yin Watana",
+    "job": "Learner",
+    "feedback":
+      "Rean is an amazing platform! The courses are well-structured, beginner-friendly, and easy to navigate. A must-visit for tech learners!",
+    "star": 5
+  },
+  {
+    "id": 3,
+    "profile": "/assets/bunlong.JPG",
+    "name": "Heang Bunlong",
+    "job": "Learner",
+    "feedback":
+      "Rean is an amazing platform! The courses are well-structured, beginner-friendly, and easy to navigate. A must-visit for tech learners!",
+    "star": 5
+  }
+]
