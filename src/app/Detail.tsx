@@ -12,7 +12,7 @@ import DetailBookButton from "../components/DetailComponents/DetailBookButton";
 import FeedbackCard from "../components/reviewSection/Feedback";
 import feedback from "../data/hotelFeedback.json"
 export default function Detail() {
-  const [currentView, setCurrentView] = useState("Profile Overview");
+  const [currentView, setCurrentView] = useState("Overview");
 
   const { type, id } = useParams<{ type: string; id: string }>();
   const [item, setItem] = useState<any>(null);
